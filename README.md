@@ -1,6 +1,21 @@
 # LLVM Contribution Tracking Scripts
 
-This repository contains Python scripts designed to track user contributions to the LLVM project across different platforms.
+This repository contains Python scripts designed to track user contributions to the LLVM project across its primary development and discussion platforms.
+
+## Overview and Key Differences
+
+While both scripts track contributions to the LLVM project, they target different platforms and types of activity.
+
+| Feature                  | GitHub (`contributions_llvm_github.py`)                               | Discourse (`contributions_llvm_discourse.py`)                            |
+| ------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Platform**             | GitHub (`github.com/llvm/llvm-project`)                               | LLVM Discourse Forums (`discourse.llvm.org`)                             |
+| **Focus**                | Code, development, and project management contributions.              | Community discussion and knowledge sharing.                              |
+| **Contribution Types**   | Commits, Pull Requests, Reviews, Issues.                              | Topics, Replies, Likes, Solutions.                                       |
+| **Primary Interaction**  | For developers and contributors to the codebase.                      | For all community members, including developers, users, and researchers. |
+
+Choose the appropriate script based on the type of contribution you want to measure.
+
+---
 
 ## Scripts
 

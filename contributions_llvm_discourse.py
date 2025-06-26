@@ -176,14 +176,25 @@ def get_user_posts(username, headers, from_date=None):
 
 def check_rate_limit(headers):
     """
-    Checks the Discourse API rate limit status.
-    Discourse doesn't have a dedicated rate_limit endpoint like GitHub.
-    We rely on headers from responses (RateLimit-*, X-RateLimit-*).
-    This function will be a placeholder or can be adapted if a specific Discourse plugin provides this.
+    Provides information on Discourse API rate limits.
+
+    Discourse rate limits are primarily determined by the type of API key used
+    and the server configuration. Unlike some other services, there isn't a 
+    dedicated endpoint to check current rate limit status. Instead, rate limit
+    information is provided in the headers of API responses.
+
+    If a rate limit is exceeded, the API will return a 429 status code, and
+    this script will pause according to the 'Retry-After' header.
     """
-    print("\nDiscourse API rate limits are included in response headers.")
-    print("This script will notify you if a rate limit is hit.")
-    print("With an API key, you should generally have a high limit (e.g., 60 reqs/min by default).")
+    print("\n--- Discourse API Rate Limit Information ---")
+    print("Discourse API rate limits depend on whether you are using an admin or user API key.")
+    print("The script handles rate limiting by waiting for the period specified in the API response.")
+    print("\nDefault limits are typically:")
+    print("- Admin API Key: 60 requests per minute")
+    print("- User API Key:  20 requests per minute")
+    print("- Per IP Address: 200 requests/minute and 50 requests/10 seconds")
+    print("\nIf you hit a rate limit, the script will automatically pause and retry.")
+    print("------------------------------------------")
 
 # --- Main Logic ---
 
